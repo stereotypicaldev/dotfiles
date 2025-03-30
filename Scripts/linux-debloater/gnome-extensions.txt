@@ -1,0 +1,16 @@
+https://extensions.gnome.org/extension/4727/primary-input-on-lockscreen/
+https://extensions.gnome.org/extension/19/user-themes/
+https://extensions.gnome.org/extension/4105/notification-banner-position/
+https://extensions.gnome.org/extension/2182/noannoyance/
+https://extensions.gnome.org/extension/4630/no-titlebar-when-maximized/
+https://extensions.gnome.org/extension/4099/no-overview/
+https://extensions.gnome.org/extension/3843/just-perfection/
+https://extensions.gnome.org/extension/545/hide-top-bar/
+https://extensions.gnome.org/extension/6195/hide-the-dock-in-overview/
+https://extensions.gnome.org/extension/2639/hide-minimized/
+https://extensions.gnome.org/extension/5769/hassleless-overview-search/
+https://extensions.gnome.org/extension/1732/gtk-title-bar/
+https://extensions.gnome.org/extension/4049/disable-gestures-2021/
+https://extensions.gnome.org/extension/3193/blur-my-shell/
+https://extensions.gnome.org/extension/5895/app-hider/
+https://extensions.gnome.org/extension/4269/alphabetical-app-grid/
