@@ -1,0 +1,32 @@
+! Discord Layout Cleanup
+
+discord.com##li.container**3792d.channel**0aef5:nth-of-type(3) > .linkButton**9da2c.interactive**3e804.interactive**0786a
+discord.com##li.container**3792d.channel**0aef5:nth-of-type(2)
+discord.com##.anchorUnderlineOnHover**03b72.anchor_c8ddc0
+discord.com##div.themed_b957e8.item**48dda.item_e4ca95:nth-of-type(4)
+discord.com##div.themed_b957e8.item**48dda.item_e4ca95:nth-of-type(3)
+discord.com##div.listItem**48528:nth-of-type(5) > .listItemWrapper**3d465 > .wrapper**9916c > .svg**34dd4
+discord.com##div.listItem**48528:nth-of-type(5) > .listItemWrapper**3d465 > .wrapper\_\_9916c
+
+! Discord Document
+
+@@||discord.com^$document,1p
+
+! Discord Gateway
+
+@@||gateway.discord.gg^$websocket,domain=discord.com
+
+! Discord User Avatars
+
+@@||cdn.discordapp.com/avatars/$image,domain=discord.com
+@@||cdn.discordapp.com^$xhr,domain=discord.com
+@@||cdn.discordapp.com/icons/$image,domain=discord.com
+
+! Discord Channels
+
+@@||discord.com/channels/$document,1p
+
+! Discord Voice
+@@||gateway-us-east1-d.discord.gg^$websocket,domain=discord.com
+@@||gateway-us-east1-b.discord.gg^$websocket,domain=discord.com
+@@||gateway-us-east1-c.discord.gg^$websocket,domain=discord.com

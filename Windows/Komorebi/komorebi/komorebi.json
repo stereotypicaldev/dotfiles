@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.25/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
+  "cross_monitor_move_behaviour": "Insert",
+  "border": true,
+  "border_colours": {
+    "single": "#00ff21",
+    "stack": "#ed333b",
+    "monocle": "#344B5D",
+    "unfocused": "#4c4c4d"
+  },
+  "border_offset": -1,
+  "border_overflow_applications": [],
+  "border_style": "Square",
+  "border_width": 2,
+  "border_z_order": "TopMost",
+  "cross_monitor_move_behavior": "NoOp",
+  "default_container_padding": 0,
+  "default_workspace_padding": 0,
+  "display_index_preferences": {},
+  "float_rules": [],
+  "focus_follows_mouse":"Komorebi",
+  "global_work_area_offset": {"bottom": 0, "left": 0, "right": 0, "top": 0},
+  "layered_applications": [],
+  "manage_rules": [],
+  "monitor_index_preferences": {},
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "Grid"
+        }
+      ]
+    }
+  ],
+  "mouse_follows_focus": false,
+  "object_name_change_applications": [],
+  "resize_delta": 0,
+  "stackbar": {
+    "height": 0,
+    "mode": "Never",
+    "tabs": {
+      "width": 0,
+      "focused_text": "#ff1493",
+      "unfocused_text": "#ffffff",
+      "background": "#141414"
+    }
+  },
+  "tray_and_multi_window_applications": [],
+  "unmanaged_window_operation_behaviour":"NoOp",
+  "window_container_behaviour":"Create",
+  "window_hiding_behaviour": "Minimize"
+}

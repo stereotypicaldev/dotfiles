@@ -1,0 +1,8 @@
+! Youtube Music - Interface Cleanup - https://letsblock.it/filters/youtube-music-cleanup
+
+music.youtube.com##ytmusic-mealbar-promo-renderer
+music.youtube.com##h2 a[href="mixed_for_you"]:upward(ytmusic-carousel-shelf-renderer)
+music.youtube.com##h2 a[href="moods_and_genres"]:upward(ytmusic-carousel-shelf-renderer):not(:matches-path(/moods_and_genres))
+music.youtube.com##yt-formatted-string > .yt-formatted-string:has-text(YouTube Music):upward(.ytmusic-carousel):not(:matches-path(/moods_and_genres))
+music.youtube.com##ytmusic-grid-renderer[grid-type="library"] yt-formatted-string:has-text(YouTube Music):upward(ytmusic-two-row-item-renderer)
+music.youtube.com###contentContainer ytmusic-guide-entry-renderer[play-button-state] .subtitle-group:has-text(YouTube Music):upward(ytmusic-guide-entry-renderer)

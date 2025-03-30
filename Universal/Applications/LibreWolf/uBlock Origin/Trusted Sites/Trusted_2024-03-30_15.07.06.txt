@@ -1,0 +1,4 @@
+about-scheme
+chrome-extension-scheme
+chrome-scheme
+moz-extension-scheme

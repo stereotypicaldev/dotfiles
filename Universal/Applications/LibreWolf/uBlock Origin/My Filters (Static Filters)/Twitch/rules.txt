@@ -1,0 +1,38 @@
+! Twitch Layout Cleanup
+
+www.twitch.tv##.kBtJDm.InjectLayout-sc-1i43xsx-0 > .cegTsp.bTXTVH.ScCoreButtonSecondary-sc-ocjdkq-2.ScCoreButton-sc-ocjdkq-0
+www.twitch.tv##.onsite-notifications.Layout-sc-1xcs6mc-0
+www.twitch.tv##.cKIKxU.Layout-sc-1xcs6mc-0 > .eSFFfM.ScButtonIcon-sc-9yap0r-0.bTXTVH.ScCoreButton-sc-ocjdkq-0
+www.twitch.tv##.gmCwLG.bTXTVH.ScCoreButtonPrimary-sc-ocjdkq-1.ScCoreButton-sc-ocjdkq-0
+www.twitch.tv##.hPfSAv.Layout-sc-1xcs6mc-0
+www.twitch.tv##.live-time
+www.twitch.tv##.hJHxso.Layout-sc-1xcs6mc-0
+www.twitch.tv##.hKEeil.Layout-sc-1xcs6mc-0
+www.twitch.tv##.keFxXM.Layout-sc-1xcs6mc-0
+www.twitch.tv##.highlight.bPrCFG.Layout-sc-1xcs6mc-0
+www.twitch.tv##.community-highlight.jxaBAK.Layout-sc-1xcs6mc-0
+www.twitch.tv##.lfgCPD.Layout-sc-1xcs6mc-0
+www.twitch.tv##.DGdsv.Layout-sc-1xcs6mc-0
+www.twitch.tv##li.kYWUOz.Layout-sc-1xcs6mc-0:nth-of-type(4) > .cmTyEs.ScInteractive-sc-iekec1-0
+www.twitch.tv##li.kYWUOz.Layout-sc-1xcs6mc-0:nth-of-type(4)
+www.twitch.tv##li.kYWUOz.Layout-sc-1xcs6mc-0:nth-of-type(3)
+www.twitch.tv##.iHafKo.Layout-sc-1xcs6mc-0
+www.twitch.tv##div.show-more__move-up.Layout-sc-1xcs6mc-0:nth-of-type(7) > .show-more__hidden.Layout-sc-1xcs6mc-0
+www.twitch.tv###\39 05fa40c0332ebc5
+www.twitch.tv###c243203b77bd8fce > .iqUbUe.Layout-sc-1xcs6mc-0 > .fYclSG.CoreText-sc-1txzju1-0
+www.twitch.tv##.tw-tower.cejWni.ScTower-sc-1sjzzes-0
+www.twitch.tv##div:nth-of-type(8) > div > .show-more__move-up.Layout-sc-1xcs6mc-0 > .show-more__hidden.Layout-sc-1xcs6mc-0
+www.twitch.tv##.igkzaw.Layout-sc-1xcs6mc-0 > div > div
+www.twitch.tv##.kAhZhz.Layout-sc-1xcs6mc-0
+www.twitch.tv##.kFGaik.InjectLayout-sc-1i43xsx-0
+www.twitch.tv##.bXHHlg.Layout-sc-1xcs6mc-0
+||static.twitchcdn.net/assets/An-AmazonCompanyWhite-8035483ebaf4be9b99e1.png$image
+
+! Twitch Playback
+@@||/^(https?:\/\/)?video-edge-[a-z0-9]{6}\.[a-z0-9]{5}.abs.hls.ttvnw.net/v1/segment/.*$/$xhr,domain=www.twitch.tv
+
+! Twitch Chat
+@@||pubsub-edge.twitch.tv/v1$websocket,domain=www.twitch.tv
+
+! Allow Popups on the Directory Page
+@@||www.twitch.tv/directory/*$popup,domain=www.twitch.tv

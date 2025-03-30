@@ -1,0 +1,138 @@
+! Youtube - Blue bubble popups for "new" features
+
+www.youtube.com##tp-yt-iron-dropdown.ytd-popup-container.style-scope
+
+! Youtube - Youtube Originals - Buttons linking to youtube originals on the sidebar
+
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(1) [href="/channel/UCqVDpXKLmKeBU_yyt_QkItQ"]
+www.youtube.com###endpoint.ytd-mini-guide-entry-renderer.style-scope.yt-simple-endpoint[href="/channel/UCqVDpXKLmKeBU_yyt_QkItQ"]
+
+! Youtube - Block all playlists being reccomended underneath a video
+
+www.youtube.com##ytd-compact-playlist-renderer:has(ytd-thumbnail-overlay-side-panel-renderer)
+
+! Youtube - Block Tv and Stuff listed as "free", usually stuff like movies and/or yt originals
+
+www.youtube.com##ytd-rich-item-renderer:has(.ytd-badge-supported-renderer:has-text(Free))
+
+! Youtube - Overlay - Visible when you hover over a video for watch later and add to queue
+
+www.youtube.com###hover-overlays
+
+! Youtube - Homepage  - Banner the banner on the home page, usually related to politics, covid 19, or other current event
+
+www.youtube.com##.ytd-rich-section-renderer
+youtube.com##ytd-rich-section-renderer:has(:scope #dismissable):has(:scope #featured-badge):has(:scope #title:has-text(/^Breaking news$/i))
+
+! Youtube - The "experiencing interruptions" toast popup in the bottom corner when a video is bufferring (due to network congestion, underperforming hardware, or any other reason)
+
+www.youtube.com###toast:has(#text-container:has-text(/experiencing interruptions/i))
+
+! Youtube - More From Youtube - The "more from youtube" section on the expanded sidebar at the bottom
+
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:has-text(/more from youtube/i)
+
+! Youtube - Upcoming Videos & Streams - https://letsblock.it/filters/youtube-upcoming-videos
+
+www.youtube.com##ytd-browse ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+www.youtube.com##ytd-browse ytd-rich-item-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer ytd-thumbnail-overlay-time-status-renderer[overlay-style="UPCOMING"]:upward(ytd-item-section-renderer)
+youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
+
+! YouTube - Left Menu Interface Cleanup - https://letsblock.it/filters/youtube-menu-cleanup
+
+www.youtube.com##a.ytd-guide-entry-renderer[href^="/feed/trending"]:upward(ytd-guide-section-renderer)
+www.youtube.com##h3 > #guide-section-title:has-text(YouTube):upward(ytd-guide-section-renderer)
+
+! Youtube Search - Cleanup - https://letsblock.it/filters/youtube-search-cleanup
+
+www.youtube.com##ytd-search ytd-item-section-renderer ytd-shelf-renderer
+www.youtube.com##ytd-search ytd-item-section-renderer ytd-horizontal-card-list-renderer
+
+! Youtube - Video - Cleanup - https://letsblock.it/filters/youtube-cleanup
+
+www.youtube.com###description #info a[href^="/hashtag/"]
+www.youtube.com##.super-title
+m.youtube.com##.standalone-collection-badge a[href^="/hashtag/"]
+m.youtube.com##ytm-video-description-header-renderer button-view-model a[href^="/hashtag/"]
+www.youtube.com###description .ytd-watch-metadata #items:has(.ytd-video-description-music-section-renderer)
+www.youtube.com###description .ytd-watch-metadata #items > ytd-horizontal-card-list-renderer:has(ytd-video-attribute-view-model)
+m.youtube.com##.video-attribute-card-shelf:has(yt-video-attribute-view-model):upward(ytm-horizontal-card-list-renderer)
+www.youtube.com###structured-description ytd-video-description-infocards-section-renderer
+m.youtube.com##ytm-video-description-infocards-section-renderer
+www.youtube.com##ytd-video-description-transcript-section-renderer
+www.youtube.com###chat:remove()
+www.youtube.com##.yt-reaction-control-panel-overlay-view-model
+youtube.com##+js(aeld, dblclick)
+youtube.com##+js(aeld, /^pan(start|move|end)$/)
+www.youtube.com###cinematics.ytd-watch-flexy:remove()
+www.youtube.com##ytd-reel-video-renderer~ytd-reel-video-renderer:matches-path(/shorts/)
+
+! Youtube Shorts 
+
+! Remove empty spaces in grid
+
+www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+
+! Hide all videos containing the phrase "#shorts"
+
+www.youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
+www.youtube.com##ytd-rich-item-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
+
+! Hide all videos with the shorts indicator on the thumbnail
+
+www.youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
+
+! Hide shorts button in sidebar
+
+www.youtube.com##ytd-guide-entry-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
+
+! Tablet resolution
+
+www.youtube.com##ytd-mini-guide-entry-renderer:has(.title:has-text(/^Shorts$/i))
+
+! Hide shorts section on homepage
+
+www.youtube.com##ytd-rich-section-renderer:has(#title:has-text(/(^| )Shorts( |$)/i))
+www.youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(/(^| )Shorts( |$)/i))
+
+! Hide shorts tab on channel pages
+
+www.youtube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))
+
+! New style (2023-10)
+
+www.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
+youtube.com##:xpath(//ytd-rich-item-renderer[descendant::span[contains(@aria-label,"Shorts")]])
+
+! Hide short remixes in video descriptions
+
+www.youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text(/^Shorts remixing this video$/i)
+
+! Hide shorts category on homepage and search pages
+
+www.youtube.com##yt-chip-cloud-chip-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
+
+! Youtube Download Button 
+
+www.youtube.com##.ytd-download-button-renderer.style-scope > yt-button-shape
+
+! Youtube Voice Search Button 
+
+www.youtube.com###voice-search-button > .ytd-masthead.style-scope
+
+! Autoplay Video Player Button
+
+www.youtube.com##yt-button-view-model.ytd-menu-renderer.style-scope
+www.youtube.com##button.ytp-button:nth-of-type(2)
+
+! Sidebar Links & Copyright
+
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(3)
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+www.youtube.com###copyright
