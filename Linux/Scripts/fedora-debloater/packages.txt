@@ -798,7 +798,6 @@ rtmpdump
 sane-backends
 sane-backends-drivers-scanners
 sane-frontends
-satyr
 scalpel
 scorched3d
 screen
@@ -936,6 +935,7 @@ webapp-manager
 websploit
 wev
 whatweb
+mcelog
 whois
 whoopsie
 wireshark
