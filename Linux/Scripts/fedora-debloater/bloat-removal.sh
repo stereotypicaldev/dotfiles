@@ -25,7 +25,7 @@ check_dependencies() {
 
 progress_bar() {
   local current=$1 total=$2 label=$3 text=$4
-  local width=25 percent=0 filled empty bar display_text
+  local width=30 percent=0 filled empty bar display_text
 
   if (( total > 0 )); then
     percent=$(( current * 100 / total ))
@@ -35,9 +35,9 @@ progress_bar() {
 
   bar=$(printf '%0.s#' $(seq 1 "$filled"))
   bar+=$(printf '%0.s-' $(seq 1 "$empty"))
-  display_text=$(printf '%-25.25s' "$text")
+  display_text=$(printf '%-30.30s' "$text")
 
-  printf '\r\033[K%s [%s] [%s] %d/%d (%d%%)' "$label" "$display_text" "$bar" "$current" "$total" "$percent"
+  printf '\r%s [%s] %s %d/%d (%d%%)' "$label" "$display_text" "$bar" "$current" "$total" "$percent"
 }
 
 pattern_to_regex() {
@@ -49,30 +49,27 @@ pattern_to_regex() {
 }
 
 sanitize_path() {
-  # Ensure we only delete files/dirs within /etc or user's home, no wildcards
+  # Only allow removing files within /etc or user's home directory
   local path=$1
   if [[ "$path" == /etc/* || "$path" == "$HOME/"* ]]; then
     printf '%s\n' "$path"
   else
-    # Refuse to delete anything outside trusted paths
     printf 'warning: unsafe path skipped: %s\n' "$path" >&2
   fi
 }
 
 remove_package() {
   local pkg=$1
-  # Skip if package not installed, avoid unnecessary dnf output
   if ! rpm -q "$pkg" >/dev/null 2>&1; then
     return 0
   fi
 
-  if ! dnf remove "$pkg"; then
+  if ! dnf remove -y "$pkg"; then
     return 1
   fi
 }
 
 autoremove_dependencies() {
-  # Remove orphaned dependencies quietly
   if ! dnf autoremove -y; then
     return 1
   fi
@@ -104,46 +101,51 @@ main() {
 
   printf 'Reading package patterns from %q...\n\n' "$FILE"
 
+  # Read patterns, skipping empty lines/comments and only valid chars in patterns
   mapfile -t patterns < <(grep -vE '^\s*#|^\s*$' "$FILE" | grep -E '^[a-zA-Z0-9._\-\*]+$' || true)
   if (( ${#patterns[@]} == 0 )); then
     printf 'No valid patterns found. Exiting.\n'
     exit 0
   fi
 
+  # Load all installed packages
   mapfile -t installed_packages < <(rpm -qa)
 
-  local total_patterns=${#patterns[@]}
-  local matched_pkgs=()
+  printf 'Loaded %d installed packages.\n' "${#installed_packages[@]}"
+  printf 'Loaded %d package patterns.\n\n' "${#patterns[@]}"
 
-  for i in "${!patterns[@]}"; do
-    local pattern="${patterns[i]}"
-    local regex
-    regex=$(pattern_to_regex "$pattern")
-
-    progress_bar $((i+1)) "$total_patterns" "Searching for" "$pattern"
-
-    # Use exact or regex match based on presence of '*'
+  # Build combined regex for all patterns with prefix matching logic
+  combined_regex=""
+  for pattern in "${patterns[@]}"; do
     if [[ "$pattern" == *'*'* ]]; then
-      mapfile -t matches < <(printf '%s\n' "${installed_packages[@]}" | grep -Ei "$regex" || true)
+      # Escape regex specials and replace * with .*
+      escaped=$(printf '%s' "$pattern" | sed -e 's/[][(){}.^$+?|\\]/\\&/g' -e 's/\*/.*/g')
     else
-      mapfile -t matches < <(printf '%s\n' "${installed_packages[@]}" | grep -iFx "$pattern" || true)
+      # Escape regex specials only and match prefix
+      escaped=$(printf '%s' "$pattern" | sed -e 's/[][(){}.^$+?|\\]/\\&/g')
+      escaped="${escaped}.*"
     fi
-
-    if (( ${#matches[@]} > 0 )); then
-      matched_pkgs+=("${matches[@]}")
+    if [[ -z "$combined_regex" ]]; then
+      combined_regex="$escaped"
+    else
+      combined_regex="${combined_regex}|${escaped}"
     fi
   done
-  printf '\n'
 
-  if (( ${#matched_pkgs[@]} == 0 )); then
+  # Removed printing of combined regex pattern to reduce clutter
+
+  printf 'Matching installed packages against combined regex...\n'
+
+  mapfile -t pkgs < <(printf '%s\n' "${installed_packages[@]}" | grep -Ei "^($combined_regex)" | sort -u)
+
+  printf 'Matched %d packages.\n\n' "${#pkgs[@]}"
+
+  if (( ${#pkgs[@]} == 0 )); then
     printf 'No installed packages matched any given patterns. Exiting.\n'
     exit 0
   fi
 
-  mapfile -t pkgs < <(printf '%s\n' "${matched_pkgs[@]}" | sort -u)
-  local total_pkgs=${#pkgs[@]}
-
-  printf '\n\nThe following %d packages match your patterns:\n\n' "$total_pkgs"
+  printf '\nThe following %d packages match your patterns:\n\n' "${#pkgs[@]}"
   for pkg in "${pkgs[@]}"; do
     printf '  - %s\n' "$pkg"
   done
@@ -155,19 +157,19 @@ main() {
     exit 0
   fi
 
-  printf '\nStarting package removals one by one with individual prompts...\n'
+  printf '\nStarting package removals one by one...\n'
 
-  local removal_cancelled=0
+  local removal_failed=0
 
   for pkg in "${pkgs[@]}"; do
-    printf '\nReady to remove package: %s\n' "$pkg"
+    printf '\nRemoving package: %s\n' "$pkg"
     if ! remove_package "$pkg"; then
       printf 'Warning: Removal of package %q failed or was cancelled.\n' "$pkg"
-      removal_cancelled=1
+      removal_failed=1
     fi
   done
 
-  if (( removal_cancelled == 0 )); then
+  if (( removal_failed == 0 )); then
     printf '\nRemoving orphaned dependencies...\n'
     if autoremove_dependencies; then
       printf 'Orphaned dependencies removed.\n'
@@ -206,4 +208,4 @@ main() {
   printf '\n📦 Packages deleted. Peace restored. Carry on and prosper! :P\n'
 }
 
-main
+main "$@"
