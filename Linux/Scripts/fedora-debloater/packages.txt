@@ -25,7 +25,6 @@ apport-kde
 apport-qt
 apport-symptoms
 apt-listchanges
-aribb24
 aspell
 aspell-en
 atomix
@@ -179,7 +178,6 @@ firefox
 firefox-esr
 firefox-langpacks
 five-or-more
-flite
 fonts-dejavu
 fonts-dejavu-core
 fonts-dejavu-extra
@@ -292,7 +290,6 @@ gparted
 granatier
 grim
 grimshot
-groff
 gsl
 gsm
 gspell
@@ -301,7 +298,6 @@ guile-2.0-libs
 gutenprint
 gutenprint-cups
 gutenprint-libs
-gvfs
 hald
 hashcat
 hashdeep
@@ -651,7 +647,6 @@ libreoffice-style-human
 libreoffice-style-tango
 libreoffice-voikko
 libreoffice-writer
-libreport
 librevenge-0.0-0
 librhythmbox-core10
 libvisio-0.1-1
@@ -667,8 +662,7 @@ lynx
 mactel-boot
 madan-fonts
 maelstrom
-makedumpfile
-malcontent-libs
+
 maltego
 man-db
 man-pages
@@ -677,7 +671,6 @@ marble
 maths-tool
 mc
 mcelog
-mdadm
 meshlab
 metasploit-framework
 midori
@@ -688,7 +681,6 @@ mlterm
 mlterm-common
 mlterm-tiny
 mobile-broadband-provider-info
-modemmanager
 mozc-data
 mozc-utils-gui
 mpage
@@ -741,11 +733,8 @@ open-vm-tools-desktop
 ophcrack
 ophcrack-cli
 orca
-
 overgod
 oxygen-fonts
-
-
 paintown
 paktype-naskh-basic-fonts
 parole
@@ -805,7 +794,6 @@ rit-meera-new-fonts
 rit-rachana-fonts
 rpm-build
 rsnapshot
-rsync
 rtmpdump
 sane-backends
 sane-backends-drivers-scanners
@@ -949,7 +937,6 @@ websploit
 wev
 whatweb
 whois
-whois-nls
 whoopsie
 wireshark
 wireshark-cli
@@ -957,7 +944,6 @@ wnorwegian
 words
 wormux
 wpscan
-wsdd
 wswedish
 wukranian
 xblast
