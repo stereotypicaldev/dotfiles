@@ -94,8 +94,6 @@ cutycapt
 cyrillic-fonts
 dbd
 dc
-dconf-editor
-dconf-service
 debconf-utils
 debian-faq
 debian-faq-de
@@ -127,7 +125,6 @@ docbook-xml
 doc-debian
 document-scanner
 dolphin
-dosfstools
 dragon-player
 drawing
 duplicity
@@ -176,7 +173,6 @@ fcitx-module-x11
 fcitx-qt5
 fdutils
 fierce
-file
 file-roller
 finger
 firefox
@@ -207,7 +203,6 @@ freedink
 freedoom
 freeglut3
 freetdp2-x11
-
 frozen-bubble
 frozen-bubble-free
 ftp
@@ -223,7 +218,6 @@ geoclue2
 gimp
 gimp-help-common
 gimp-help-sv
-
 gir1.2-rb-3.0
 gir1.2-xviewer-3.0
 gnome-2048
@@ -826,7 +820,6 @@ shotwell
 shotwell-common
 sil-padauk-fonts
 simple-scan
-slang
 sleuthkit
 slurp
 smplayer
@@ -973,7 +966,6 @@ xchat
 xed
 xed-dbg
 xfce4-panel
-xfconf
 xiterm+thai
 xmlsec1grep
 xmlsec1-openssl
