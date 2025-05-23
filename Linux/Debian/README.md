@@ -1,7 +1,7 @@
 ## Terminal
 
-- [micro](https://micro-editor.github.io/)
-- [nala](https://gitlab.com/volian/nala)
+- [micro](https://micro-editor.github.io/) - Text Editor
+- [nala](https://gitlab.com/volian/nala) - Package Manager
 - [bandwhich](https://github.com/imsnif/bandwhich)
 - [cheat](https://github.com/cheat/cheat)
 - [bpytop](https://github.com/aristocratos/bpytop)
@@ -23,27 +23,48 @@
 - [nnn](https://github.com/jarun/nnn)
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file)
 - [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [exiftool](https://exiftool.org/)
+- [lf](https://github.com/gokcehan/lf)
 
 https://github.com/vinifmor/bauh
 https://github.com/wimpysworld/deb-get
 https://github.com/tchx84/flatseal
+https://github.com/0pandadev/qopy
+https://cboxdoerfer.github.io/fsearch/
+https://github.com/phase1geo/Minder
 
 ## Applications
 
-- Browser
+- Browsers
 - Code Editor
 - Document Viewer (PDF Reader)
 - Image Viewer
 - Music Player
 - Text Editor
-- Email Client
 - Video Player
 - Virtualization
 - Communications Apps
 - Book Reader
 - StreamDeck
+- Password Managers
+- Screen Recording
+- Mouse Configuration
+- Torrent Client? https://transmissionbt.com/
 
-## Brightness Control
+## OCR Extraction
+
+- https://tenderowl.com/work/frog/
+
+## Mouse Configuration
+
+- https://github.com/libratbag/piper
+
+## Password Manager
+
+- [KeepassXC](https://keepassxc.org/)
+
+## Brightness Control?
 
 ## Browsers
 
@@ -52,11 +73,6 @@ https://github.com/tchx84/flatseal
 - https://astian.org/midori-browser/linux/
 - https://minbrowser.org/
 - https://zen-browser.app/
-
-## Email Client
-
-https://github.com/Foundry376/Mailspring?tab=readme-ov-file
-https://www.thunderbird.net/en-GB/
 
 ## Code Editor
 
@@ -67,12 +83,7 @@ https://www.thunderbird.net/en-GB/
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
 - [Zed.dev](https://zed.dev/)
 - [WebStorm](https://www.jetbrains.com/webstorm/)
-
-## System Optimization
-
-- https://www.bleachbit.org/
-- https://rmlint.readthedocs.io/en/latest/
-- https://www.nongnu.org/synaptic/
+- [Pulsar](https://pulsar-edit.dev/)
 
 ## Document Viewer (PDF Reader)
 
@@ -81,10 +92,14 @@ https://www.thunderbird.net/en-GB/
 - [Zathura](https://pwmt.org/projects/zathura/)
 - [Evince]()
 
+- [PDFSam](https://pdfsam.org/)
+- [PDF Arranger](https://github.com/pdfarranger/pdfarranger)
+
 ## Image Viewer
 
 - [feh](https://feh.finalrewind.org/)
 - [Geeqie](https://www.geeqie.org/)
+- [qView](https://interversehq.com/qview/)
 
 ## Music Player
 
@@ -97,14 +112,13 @@ https://www.thunderbird.net/en-GB/
 - [Spotifyd](https://github.com/Spotifyd/spotifyd)
 - [ncspot](https://github.com/hrkfdn/ncspot)
 
-## Text Editor
+## Notetaking
 
-- https://pulsar-edit.dev/
 - [Obsidian](https://www.obsidian.md)
 
 ## Video Player
 
-- https://bomi-player.github.io/
+- [Bomi](https://bomi-player.github.io/)
 - https://celluloid-player.github.io/
 - https://rafostar.github.io/clapper/
 - https://haruna.kde.org/
@@ -114,31 +128,31 @@ https://www.thunderbird.net/en-GB/
 
 - [Qemu](https://github.com/qemu/qemu) + [Virtual Machine Manager](https://github.com/virt-manager/virt-manager) - https://virt-manager.org/
 
-## Book Reader
+## EPUB Reader
 
-- Calibre
+- [Calibre]()
 
 ## StreamDeck
 
 - [Boatswain](https://apps.gnome.org/Boatswain/)
 
-## 
+## Encryption
 
-- https://espanso.org/
+- [Veracrypt](https://veracrypt.io/en/Home.html)
+
+## Text Expansion
+
+- [Espanso](https://espanso.org/)
 
 ## Miscellaneous
 
 - [Czkawka](https://github.com/qarmin/czkawka?tab=readme-ov-file)
-
-- [Veracrypt](https://veracrypt.io/en/Home.html)
 
 - [Yubico Authenticator]()
 
 - [YubiKey Manager]()
 
 - [Imagine](https://github.com/meowtec/Imagine?tab=readme-ov-file) - compression of PNG and JPEG
-
-- [Sound Switcher Indicator](https://yktoo.com/en/software/sound-switcher-indicator/#software-source)
 
 - [Syncthing](https://syncthing.net/)
 
